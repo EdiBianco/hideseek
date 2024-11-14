@@ -12,29 +12,6 @@
  * 1. Highlight v4 by Johann Burkard
  *
  */
-
-  /* Sample html structure
-
-  <input name="search" placeholder="Start typing here" type="text" data-list=".list">
-  <ul class="list">
-    <li>item 1</li>
-    <li>...</li>
-    <li><a href="#">item 2</a></li>
-  </ul>
-
-  or
-
-  <input name="search" placeholder="Start typing here" type="text" data-list=".list">
-  <div class="list">
-    <span>item 1</span>
-    <span>...</span>
-    <span>item 2</span>
-  </div>
-
-  or any similar structure...
-
-  */
-
 ;(function($, window, undefined) {
   "use strict";
 
@@ -77,7 +54,7 @@
 
       $this.keyup(function(e) {
 
-        if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( e.keyCode != 8 || e.keyCode !== 46 ? $this.val().length >= $this.opts.min_chars : true ) ) {
+        if ( [38, 40, 13].indexOf(e.keyCode) == -1 && ( e.keyCode != 8 && e.keyCode !== 46 ? $this.val().length >= $this.opts.min_chars : true ) ) {
 
           var q = $this.val().toLowerCase();
 
